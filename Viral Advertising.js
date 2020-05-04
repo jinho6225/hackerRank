@@ -12,3 +12,5 @@ function viralAdvertising(n) {
   }
   return result;
 }
+
+viralAdvertising(5)
