@@ -1,7 +1,8 @@
 # HackerRank
 
 ## HackerRank
-A repository to keep track of the algorithms I have solved from LeetCode
+The HackerRank Interview Preparation Kit (4/69 solved)
+[link](https://www.hackerrank.com/interview/interview-preparation-kit)
 
 ## Goals
 1.  Complete at least 1 Algorithm per day
