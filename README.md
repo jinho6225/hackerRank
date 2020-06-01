@@ -2,7 +2,8 @@
 
 ## HackerRank
 The HackerRank Interview Preparation Kit (4/69 solved)
-[link](https://www.hackerrank.com/interview/interview-preparation-kit)
+
+> [link](https://www.hackerrank.com/interview/interview-preparation-kit)
 
 ## Goals
 1.  Complete at least 1 Algorithm per day
