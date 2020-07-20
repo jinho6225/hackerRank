@@ -113,26 +113,27 @@ function main() {
  *
  */
 function mergeLists(head1, head2) {
-    let node = new SinglyLinkedListNode();
-    let currentNode = node;
-    while (head1 !== null && head2 !== null) {
-        if (head1.data <= head2.data) {
-        currentNode.next = new SinglyLinkedListNode(head1.data);
-        head1 = head1.next;
-        } else {
-        currentNode.next = new SinglyLinkedListNode(head2.data);
-        head2 = head2.next;
+    let node = new SinglyLinkedListNode()
+    let cur = node
+    while (head1 || head2) {
+        if (!head1) {
+            cur.next = head2
+            break;
         }
-        currentNode = currentNode.next;
+        if (!head2) {
+            cur.next = head1
+            break;
+        }
+        if (head1.data < head2.data) {
+            cur.next = new SinglyLinkedListNode(head1.data)
+            head1 = head1.next
+        } else {
+            cur.next = new SinglyLinkedListNode(head2.data)
+            head2 = head2.next
+        }
+        cur = cur.next
     }
-    if (head2 !== null) {
-        currentNode.next = head2;
-    }
-    if (head1 !== null) {
-        currentNode.next = head1;
-    }
-    node = node.next;
-    return node;
+    return node.next
 }
 
 function main() {
