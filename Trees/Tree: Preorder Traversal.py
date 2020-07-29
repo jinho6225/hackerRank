@@ -40,17 +40,40 @@ self.left (the left child of the node)
 self.right (the right child of the node)
 self.info (the value of the node)
 """
+#Recursively
 def preOrder(root):
     #Write your code here
     lst = []
     def helper(node):
         if node is None:
             return
-        lst.append(node.info)
+        lst.append(str(node.info))
         helper(node.left)
         helper(node.right)
     helper(root)    
-    string = ''
-    for x in lst:
-        string += str(x) + ' '
-    print(string)
+    print(' '.join(lst))
+
+
+
+
+"""
+Node is defined as
+self.left (the left child of the node)
+self.right (the right child of the node)
+self.info (the value of the node)
+"""
+#Iteratively
+def preOrder(root):
+    #Write your code here
+    stack=[]
+    lst=[]
+    while True:
+        stack.append(root)
+        while len(stack):
+            cur = stack.pop()
+            lst.append(str(cur.info))
+            if cur.right: stack.append(cur.right)
+            if cur.left: stack.append(cur.left) #[x, x, x, x, x, x, x]
+        if len(stack) == 0: break;
+    print(" ".join(lst))
+
