@@ -53,3 +53,25 @@ def postOrder(root):
 
     helper(root)
     print(" ".join(lst))
+
+
+
+"""
+Node is defined as
+self.left (the left child of the node)
+self.right (the right child of the node)
+self.info (the value of the node)
+"""
+#Iteratively
+def postOrder(root):
+    #Write your code here
+    lst=[]
+    stack=[]
+    stack.append(root)
+    while len(stack):
+        cur = stack.pop()
+        lst.insert(0,str(cur.info))
+        if cur.left: stack.append(cur.left)
+        if cur.right: stack.append(cur.right)
+    print(' '.join(lst))
+
