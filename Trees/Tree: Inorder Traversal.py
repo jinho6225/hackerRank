@@ -65,4 +65,15 @@ self.info (the value of the node)
 #Iteratively
 def inOrder(root):
     #Write your code here
-    
+    lst1 = []
+    stack = []
+    cur = root
+    while True:
+        while cur:
+            stack.append(cur)
+            cur = cur.left
+        if len(stack) == 0: break
+        cur = stack.pop()
+        lst1.append(str(cur.info))
+        cur = cur.right;
+    print(" ".join(lst1))
