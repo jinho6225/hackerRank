@@ -78,7 +78,6 @@ function printDoublyLinkedList(node, sep, ws) {
  */
 function sortedInsert(head, data) {
     let newNode = new DoublyLinkedListNode(data)
-    let cur = head
     if (head.data > newNode.data) {
         newNode.next = head
         newNode.next.prev = newNode
