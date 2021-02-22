@@ -1,30 +1,36 @@
-function hourglassSum(arr) {
-  let max =
-    arr[0][0] +
-    arr[0][1] +
-    arr[0][2] +
-    arr[1][1] +
-    arr[2][0] +
-    arr[2][1] +
-    arr[2][2];
-  for (let i = 2; i < arr.length; i++) {
-    for (let j = 2; j < arr[i].length; j++) {
-      let sum = 0;
-      if (i >= 2 && j >= 2) {
-        sum =
-          sum +
-          arr[i - 2][j - 2] +
-          arr[i - 2][j - 1] +
-          arr[i - 2][j] +
-          arr[i - 1][j - 1] +
-          arr[i][j - 2] +
-          arr[i][j - 1] +
-          arr[i][j];
-        if (sum > max) max = sum;
-      } else {
-        continue;
+var arr = [
+  [-1, 1, -1, 0, 0, 0],
+  [0, -1, 0, 0, 0, 0],
+  [-1, -1, -1, 0, 0, 0],
+  [0, -9, 2, -4, -4, 0],
+  [-7, 0, 0, -2, 0, 0],
+  [0, 0, -1, -2, -4, 0],
+];
+
+function maxSumOfHourglasses(arr) {
+  var max = null;
+  for (var i = 0; i < arr.length - 2; i++) {
+    for (var j = 0; j < arr[i].length - 2; j++) {
+      var sum = helper(arr, i, j);
+      if (max === 0) {
+        max = sum;
+      }
+      if (sum > max) {
+        max = sum;
       }
     }
   }
   return max;
 }
+function helper(arr, i, j) {
+  var total = 0;
+  total += arr[i][j];
+  total += arr[i][j + 1];
+  total += arr[i][j + 2];
+  total += arr[i + 1][j + 1];
+  total += arr[i + 2][j];
+  total += arr[i + 2][j + 1];
+  total += arr[i + 2][j + 2];
+  return total;
+}
+console.log(maxSumOfHourglasses(arr));
